@@ -12,7 +12,8 @@ export default async function Home() {
 
   return (
    <div className={classes.container}>
-    {blogs?.length > 0 && <h2>WebDevMania&apos;s Blog Website</h2>}
+    {blogs?.length > 0 && <h2> Discover Your Blogging Journey, Embrace Individuality <br/>
+Create a Captivating Platform that Defines You.</h2>}
      <div className={classes.wrapper}>
       {blogs?.length > 0 
        ? blogs.map((blog) => (

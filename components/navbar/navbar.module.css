@@ -23,7 +23,7 @@
 
 .left{
     font-size: 36px;
-    color: rgb(26, 180, 26);
+    color: rgb(10, 24, 224);
 }
 
 .right{
@@ -31,7 +31,17 @@
     align-items: center;
     gap: 1.25rem;
 }
-
+.rightside{
+    outline: none;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    font-size: 17px;
+    background-color: rgb(53, 62, 194);;
+    color: rgb(236, 229, 229);
+    float: right;
+    border-radius: 12px;
+    cursor: pointer;
+}
 .right > div > img{
     object-fit: cover;
     border-radius: 50%;
@@ -46,11 +56,12 @@
     border-radius: 8px;
     font-weight: bold;
     font-size: 17px;
-    background-color: #10c142;
+    background-color: rgb(10, 24, 224);;
+    
 }
 
 .create{
-    color: #444;
+    color: black;
     font-size: 18px;
     font-weight: 300;
 }
@@ -60,7 +71,7 @@
     border: none;
     padding: 0.5rem 1.25rem;
     font-size: 17px;
-    background-color: #10c142;
+    background-color: rgb(10, 24, 224);;
     color: #fff;
     border-radius: 12px;
     cursor: pointer;
@@ -91,4 +102,18 @@
     position: absolute;
     top: 0.3rem;
     right: 0.3rem;
+}
+.closeIcon:hover{
+    background-color: red;
+}
+.usercontain{
+    display: flex;
+    gap: 15px;
+}
+.user{
+    height: 45px;
+    width: 45px;
+    background-color: blue;
+    border: 1px solid rgb(19, 19, 119);
+    border-radius: 45%;
 }

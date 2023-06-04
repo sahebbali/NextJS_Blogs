@@ -6,10 +6,10 @@ import {BsTrash} from 'react-icons/bs'
 import classes from './comment.module.css'
 import Image from 'next/image'
 
-const Comment = (comment, setComments) => {
+const Comment = ({comment, setComments}) => {
     const {data: session} = useSession()
     const token = session?.user?.accessToken;
-
+console.log(comment);
     const handleDeleteComment = async() => {
         try {
           await fetch(`/api/comment/${comment?._id}`, {

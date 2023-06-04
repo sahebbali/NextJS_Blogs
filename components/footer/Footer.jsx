@@ -14,9 +14,9 @@ const Footer = () => {
         </div>
         <div className={classes.col}>
           <h2>Contacts</h2>
-          <span>Phone +123 456 789</span>
-          <span>YouTube: WebDevMania</span>
-          <span>GitHub: WebDevMania</span>
+          <span>Phone: +8801783238741</span>
+          <span>Email: sahebbali253@gmail.com</span>
+          
         </div>
         <div className={classes.col}>
           <h2>Location</h2>

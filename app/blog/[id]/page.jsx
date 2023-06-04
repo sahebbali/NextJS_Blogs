@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { format } from 'timeago.js';
+import Comment from '../../../components/comment/Comment'
 import person from '../../../public/ali.jpg'
 import { ToastContainer } from 'react-toastify';
 const BlogDetails = (ctx) => {

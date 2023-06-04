@@ -5,9 +5,11 @@ import classes from './blogCard.module.css'
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import {useSession} from 'next-auth/react'
+import { format } from 'timeago.js';
 import { AiFillLike, AiOutlineLike } from 'react-icons/ai'
 
-const BlogCard = ({blog: {title, desc, imageUrl, likes, authorId, _id}}) => {
+const BlogCard = ({blog: {title, desc, imageUrl, likes, createdAt, authorId, _id}}) => {
+   
     const {data: session} = useSession();
     const [isLiked, setIsLiked] = useState(false);
     const [blogLikes, setBlogLikes] = useState(0)
@@ -17,9 +19,10 @@ const BlogCard = ({blog: {title, desc, imageUrl, likes, authorId, _id}}) => {
     },[session, likes])
 
     const handleLike = async()=>{
+        
         try {
-            const res = await fetch(`/api/blog/${_d}/like`,{
-            headers: { 'Authoriztion' : `Bearer ${session?.user?.accessToken}`},
+            const res = await fetch(`/api/blog/${_id}/like`,{
+            headers: { 'Authorization' : `Bearer ${session?.user?.accessToken}`},
             method : "PUT"
         })
         console.log(res);
@@ -47,7 +50,7 @@ const BlogCard = ({blog: {title, desc, imageUrl, likes, authorId, _id}}) => {
                 <div className={classes.left}>
                     <h3>{title}</h3>
                     <p>{desc}</p>
-                    <span>Created By: <span>1th of January</span> </span>
+                    <span>Created By:  <span>{format(createdAt)} </span></span>
                 </div>
                 <div className={classes.right}>
                     {blogLikes} {" "}

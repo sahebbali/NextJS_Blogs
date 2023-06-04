@@ -10,7 +10,7 @@ import {signIn, signOut, useSession} from 'next-auth/react'
 const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState(false)
     const {data: session} = useSession()
-  
+  console.log(session)
     const handleShowDropdown = () => setShowDropdown(prev => true)
   
     const handleHideDropdown = () => setShowDropdown(prev => false)
@@ -21,14 +21,24 @@ const Navbar = () => {
       <div className={classes.container}>
         <div className={classes.wrapper}>
           <h2 className={classes.left}>
-            <Link href="/">WebDevMania</Link>
+            <Link href="/">StorySailor</Link>
           </h2>
+          
           <ul className={classes.right}>
+          
             {
               session?.user
                 ? (
-                  <div>
+                  
+                  <div className={classes.usercontain}>
+                    <div className={classes.rightside}>
+            {session?.user && <Link onClick={handleHideDropdown} href='/create-blog' className={classes.create}>Create</Link>
+}
+          </div>
                     <Image onClick={handleShowDropdown} src={person} alt='Person' width='45' height='45' />
+                    <div className={classes.user}>
+
+                    </div>
                     {showDropdown && (
                       <div className={classes.dropdown}>
                         <AiOutlineClose className={classes.closeIcon} onClick={handleHideDropdown} />
