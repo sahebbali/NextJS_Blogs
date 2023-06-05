@@ -10,12 +10,19 @@ import {signIn, signOut, useSession} from 'next-auth/react'
 const Navbar = () => {
     const [showDropdown, setShowDropdown] = useState(false)
     const {data: session} = useSession()
-  console.log(session)
+    const str = session?.user.email;
+  if(str){
+    var firstCharacter = getFirstCharacter(str);
+    function getFirstCharacter(str) {
+      return str[0];
+    }
+   
+  }
+  
     const handleShowDropdown = () => setShowDropdown(prev => true)
   
     const handleHideDropdown = () => setShowDropdown(prev => false)
   
-    const loggedIn = false
   
     return (
       <div className={classes.container}>
@@ -35,13 +42,14 @@ const Navbar = () => {
             {session?.user && <Link onClick={handleHideDropdown} href='/create-blog' className={classes.create}>Create</Link>
 }
           </div>
-                    <Image onClick={handleShowDropdown} src={person} alt='Person' width='45' height='45' />
-                    <div className={classes.user}>
-
+                    {/* <Image onClick={handleShowDropdown} src={person} alt='Person' width='45' height='45' /> */}
+                    <div onClick={handleShowDropdown} className={classes.user}>
+                      <h1>{firstCharacter.toUpperCase()}</h1>
                     </div>
                     {showDropdown && (
                       <div className={classes.dropdown}>
                         <AiOutlineClose className={classes.closeIcon} onClick={handleHideDropdown} />
+                        <h5>{session?.user.email}</h5>
                         <button onClick={() => {signOut(); handleHideDropdown()}} className={classes.logout}>Logout</button>
                         <Link onClick={handleHideDropdown} href='/create-blog' className={classes.create}>Create</Link>
                       </div>
