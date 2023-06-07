@@ -129,7 +129,38 @@
   
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
+    .wrapper {
+      flex-direction: row;
+      align-items: flex-end;
+    }
+    
+    .left {
+      margin-bottom: .5rem;
+    }
+    
+    .right {
+      margin-top: 1rem;
+    }
+    
+    .rightside {
+      font-size: 14px;
+      padding: 0.4rem 1rem;
+    }
+    
+    .logout,
+    .create,
+    .login {
+      font-size: 14px;
+      padding: 0.4rem 1rem;
+    }
+    
+    .dropdown {
+      top: 1rem;
+     
+  }
+
+  @media screen and (max-width: 768px) {
     .wrapper {
       flex-direction: column;
       align-items: flex-start;
@@ -160,3 +191,109 @@
       right: -1rem;
     }
   }
+
+
+
+  @media (min-width: 1201px) {
+    .heading {
+      font-size: 28px;
+      color: blue;
+    }
+  
+    .paragraph {
+      font-size: 18px;
+    }
+  
+    /* Additional styles for larger screens */
+    .container {
+      padding: 40px;
+    }
+  
+    .wrapper {
+      width: 80%;
+    }
+  
+    .left {
+      font-size: 48px;
+    }
+  
+    .rightside {
+      font-size: 20px;
+      padding: 0.75rem 1.5rem;
+    }
+  
+    .logout {
+      font-size: 20px;
+    }
+  
+    .create {
+      font-size: 24px;
+    }
+  
+    .login {
+      font-size: 20px;
+    }
+  
+    .dropdown {
+      padding: 2rem;
+      top: 3rem;
+      right: -4rem;
+    }
+  
+    .dropdown > * {
+      font-size: 20px;
+    }
+  }
+  
+  /* Responsive styles for screens smaller than 1200px */
+  
+  @media (max-width: 1200px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .heading {
+      font-size: 20px;
+    }
+  
+    .paragraph {
+      font-size: 14px;
+    }
+  
+    /* Additional styles for smaller screens */
+    .wrapper {
+      width: 90%;
+    }
+  
+    .left {
+      font-size: 24px;
+    }
+  
+    .rightside {
+      font-size: 14px;
+      padding: 0.5rem 1rem;
+    }
+  
+    .logout {
+      font-size: 14px;
+    }
+  
+    .create {
+      font-size: 16px;
+    }
+  
+    .login {
+      font-size: 14px;
+    }
+  
+    .dropdown {
+      padding: 1rem;
+      top: 2.5rem;
+      right: -3rem;
+    }
+  
+    .dropdown > * {
+      font-size: 14px;
+    }
+  }
+}

@@ -9,7 +9,14 @@ import Image from 'next/image'
 const Comment = ({comment, setComments}) => {
     const {data: session} = useSession()
     const token = session?.user?.accessToken;
-console.log(comment);
+    const str = session?.user.email;
+    if(str){
+      var firstCharacter = getFirstCharacter(str);
+      function getFirstCharacter(str) {
+        return str[0];
+      }
+     
+    }
     const handleDeleteComment = async() => {
         try {
           await fetch(`/api/comment/${comment?._id}`, {
@@ -30,7 +37,9 @@ console.log(comment);
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
-             <Image src={person} width='45' height='45' alt="" />
+                   <div className={classes.user}>
+                      <h1>{firstCharacter.toUpperCase()}</h1>
+                    </div>
              <div className={classes.userData}>
                <h4>{comment?.authorId?.username}</h4>
                <span className={classes.timeago}>{format(comment?.createdAt)}</span>

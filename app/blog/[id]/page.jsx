@@ -22,6 +22,15 @@ const BlogDetails = (ctx) => {
     const [comments, setComments] = useState([]);
 
     const {data: session}= useSession();
+    const str = session?.user.email;
+    if(str){
+    var firstCharacter = getFirstCharacter(str);
+    function getFirstCharacter(str) {
+      return str[0];
+        }
+   
+    }
+    console.log(firstCharacter);
     const router = useRouter()
     useEffect(() => {
         async function fetchComments(){
@@ -164,7 +173,9 @@ const BlogDetails = (ctx) => {
             </div>
             <div className={classes.commentSection}>
                 <div className={classes.commentInput}>
-                    <Image src={person} width={45} height={45} alt='comments' />
+                     <div className={classes.user}>
+                      <h1>{firstCharacter?.toUpperCase()}</h1>
+                    </div>
                     <input 
                         value={commentText} 
                         type="text" 
