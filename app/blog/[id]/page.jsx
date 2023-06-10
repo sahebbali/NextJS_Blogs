@@ -54,7 +54,7 @@ const BlogDetails = (ctx) => {
         
         session && fetchBlog();
 
-    },[session])
+    },[session,ctx.params.id])
 
     const handleDelete = async () => {
         try {

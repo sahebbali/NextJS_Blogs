@@ -1,7 +1,9 @@
-import BlogCard from '../components/blogCard/BlogCard'
-import classes from './page.module.css'
+
+import BlogCard from '../components/blogCard/BlogCard';
+import classes from './page.module.css';
+
 export async function fetchBlogs(){
-  const res = await fetch('http://localhost:3000/api/blog', {cache: 'no-store'})
+  const res = await fetch('http:localhost:3000/api/blog', {cache: 'no-store'})
 
   return res.json()
 }
@@ -12,8 +14,7 @@ export default async function Home() {
 
   return (
    <div className={classes.container}>
-    {blogs?.length > 0 && <h2> Discover Your Blogging Journey, Embrace Individuality <br/>
-Create a Captivating Platform that Defines You.</h2>}
+    {blogs?.length > 0 && <h2>WebDevMania&apos;s Blog Website</h2>}
      <div className={classes.wrapper}>
       {blogs?.length > 0 
        ? blogs.map((blog) => (
