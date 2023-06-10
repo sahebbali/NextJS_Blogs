@@ -11,7 +11,6 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { format } from 'timeago.js';
 import Comment from '../../../components/comment/Comment'
-import person from '../../../public/ali.jpg'
 import { ToastContainer } from 'react-toastify';
 const BlogDetails = (ctx) => {
     const [blogDetails, setBlogDetails] = useState("");
@@ -40,7 +39,7 @@ const BlogDetails = (ctx) => {
           setComments(comments)
         }
         fetchComments()
-      }, [])
+      }, [ctx.params.id])
 
     useEffect (()=>{
         async function fetchBlog (){
@@ -54,7 +53,7 @@ const BlogDetails = (ctx) => {
         
         session && fetchBlog();
 
-    },[session,ctx.params.id])
+    },[session, ctx.params.id])
 
     const handleDelete = async () => {
         try {
