@@ -28,7 +28,8 @@ const Navbar = () => {
       <div className={classes.container}>
         <div className={classes.wrapper}>
           <h2 className={classes.left}>
-            <Link href="/">StorySailor</Link>
+          <Image className='mt-4' src="/Sailorlogo.png" height={70} width={70} alt='logo' />
+          <Link className={classes.logo} href="/">StorySailor</Link>
           </h2>
           
           <ul className={classes.right}>

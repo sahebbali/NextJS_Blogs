@@ -24,6 +24,11 @@
 .left{
     font-size: 36px;
     color: rgb(10, 24, 224);
+    display: flex;
+}
+.logo {
+  padding-top: 5px;
+  margin-top: 8px;
 }
 
 .right{
@@ -137,6 +142,7 @@
     
     .left {
       margin-bottom: .5rem;
+      display: flex;
     }
     
     .right {

@@ -16,7 +16,7 @@ export default function RootLayout({ children, session }) {
   return (
     <html lang="en">
          <head>
-          <link rel="shortcut icon" href="/2.png" />
+          <link rel="shortcut icon" href="/Sailorlogo.png" />
       </head>
       <body className={inter.className}>
        <Provider>     
