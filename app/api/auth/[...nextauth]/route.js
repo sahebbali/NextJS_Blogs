@@ -5,7 +5,6 @@ import {connectToDB} from "../../../../utils/db";
 import bcrypt from  'bcrypt'
 import  {signJwtToken}  from "../../../../utils/jwt"
 
-const secret = process.env.NEXTAUTH_SECRET || crypto.randomBytes(32).toString('hex');
 
 const handler = NextAuth({
     providers: [
@@ -46,7 +45,7 @@ const handler = NextAuth({
             }
         })
     ],
-    secret: secret,
+   
 
     pages: {
         signIn: '/login'
